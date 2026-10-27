@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Studio | QR Code & Photo to PDF</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR code library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- PDF generation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>⚡ QR Studio</h1>
+        <p>Create QR codes and convert photos into PDF files.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- QR Code Generator -->
+        <section class="card">
+            <h2>🔗 QR Code Generator</h2>
+
+            <label for="qrInput">Enter a website URL or text</label>
+
+            <input
+                type="text"
+                id="qrInput"
+                placeholder="https://example.com"
+            >
+
+            <button id="generateBtn">Generate QR Code</button>
+
+            <div id="qrResult" class="qr-result"></div>
+
+            <button id="downloadBtn" class="secondary hidden">
+                Download QR Code
+            </button>
+
+            <p id="qrMessage" class="message"></p>
+        </section>
+
+        <!-- Photo QR Code -->
+        <section class="card">
+            <h2>🖼️ QR Code for a Photo</h2>
+
+            <p class="description">
+                Enter a publicly accessible image URL to generate a QR code
+                that opens the photo.
+            </p>
+
+            <label for="imageUrl">Image URL</label>
+
+            <input
+                type="url"
+                id="imageUrl"
+                placeholder="https://example.com/photo.jpg"
+            >
+
+            <button id="imageQrBtn">Generate Photo QR</button>
+
+            <div id="imageQrResult" class="qr-result"></div>
+
+            <button id="downloadImageQrBtn" class="secondary hidden">
+                Download Photo QR
+            </button>
+
+            <p id="imageQrMessage" class="message"></p>
+        </section>
+
+        <!-- Photo to PDF -->
+        <section class="card">
+            <h2>📄 Convert Photos to PDF</h2>
+
+            <label for="photoInput">Choose photos</label>
+
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                multiple
+            >
+
+            <div id="photoPreview" class="photo-preview"></div>
+
+            <button id="pdfBtn">Convert Photos to PDF</button>
+
+            <p id="pdfMessage" class="message"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>QR Studio © 2026 | Simple tools, one place.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
